@@ -1,0 +1,6 @@
+# 編譯過後的 CSS 檔案
+styles/*.css
+styles/*.css.map
+
+# 編譯過後的 JavaScript 檔案
+*.js

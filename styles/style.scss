@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero {
+  height: 100vh;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .loader {
+    border: 16px solid #f3f3f3;
+    // 只有上方有顏色，模擬 loading
+    border-top: 16px solid #3498db;
+    // 將原本的方形變成圓形
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    // 先隱藏，之後再透過 JavaScript 等要載入時顯示
+    display: none;
+  }
+
+  .main {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    p {
+      font-size: 2.5rem;
+      display: inline-block;
+      height: auto;
+      overflow: auto;
+      margin: 1.5rem;
+      text-align: center;
+      cursor: text;
+      line-height: 5rem;
+      // background-color: royalblue;
+      // 隱藏 scrollbar
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+  .temp-msg {
+    position: fixed;
+    padding: 1rem;
+    border-radius: 20px;
+    top: 15%;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 1.5rem;
+    animation: fade 2s;
+    animation-fill-mode: forwards;
+    display: none;
+  }
+}
+
+/* 針對 Firefox scrollbar */
+html {
+  scrollbar-width: none;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
